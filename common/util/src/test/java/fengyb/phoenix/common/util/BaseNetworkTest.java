@@ -145,6 +145,7 @@ public class BaseNetworkTest {
             }
 
             @Override
+            @SuppressWarnings("deprecation")
             public boolean isRequestedSessionIdFromUrl() {
                 return false;
             }
@@ -305,6 +306,7 @@ public class BaseNetworkTest {
             }
 
             @Override
+            @SuppressWarnings("deprecation")
             public String getRealPath(String path) {
                 return null;
             }
@@ -493,6 +495,7 @@ public class BaseNetworkTest {
             }
 
             @Override
+            @SuppressWarnings("deprecation")
             public boolean isRequestedSessionIdFromUrl() {
                 return false;
             }
@@ -653,6 +656,7 @@ public class BaseNetworkTest {
             }
 
             @Override
+            @SuppressWarnings("deprecation")
             public String getRealPath(String path) {
                 return null;
             }
