@@ -40,6 +40,8 @@
             </activation>
             <properties>
                 <sonar.host.url>http://localhost:9000</sonar.host.url>
+                <sonar.exclusions></sonar.exclusions>
+                <sonar.scm.provider>git</sonar.scm.provider>
             </properties>
         </profile>
     </profiles>
