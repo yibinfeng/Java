@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+    <bean id="orderServiceImpl" class="fengyb.phoenix.playground.spring.service.impl.OrderServiceImpl"/>
+    <bean id="userServiceImpl" class="fengyb.phoenix.playground.spring.service.impl.UserServiceImpl"/>
+
+    <bean id="logArgsAdvice" class="fengyb.phoenix.playground.spring.advice.LogArgsAdvice"/>
+    <bean id="logResultAdvice" class="fengyb.phoenix.playground.spring.advice.LogResultAdvice"/>
+
+    <bean id="logArgsAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+        <property name="advice" ref="logArgsAdvice"/>
+        <property name="pattern" value="fengyb.phoenix.playground.spring.service.*.create.*"/>
+    </bean>
+    <bean id="logResultAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+        <property name="advice" ref="logResultAdvice"/>
+        <property name="pattern" value="fengyb.phoenix.playground.spring.service.*.query.*"/>
+    </bean>
+
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+</beans>
